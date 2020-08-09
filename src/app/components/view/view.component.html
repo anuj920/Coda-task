@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-12" style="padding-left: 0;">
+
+            <div class="col-md-8" style="padding-left: 2px;">
+                <div class="form-group">
+                    <label>Search By Name</label>
+                    <input type="text" (keyup)="searchByName($event.target.value)" class="form-control" placeholder="Enter Keyword">
+                  </div>
+            </div>
+
+        </div>
+
+        <div *ngFor="let recipe of recipes; let i=index" class="col-lg-3 col-md-6">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="{{ recipe.image }}" alt="">
+                    </div>
+                    <div class="card-detail" [ngClass]="(i%2==0)?'back-black':'back-white'">
+                        <div class="card-name">{{ recipe.name }}</div>
+                        <div class="card-price">
+                            <i class="fas fa-dollar-sign"></i> {{ recipe.price }}
+                        </div>
+                        <div class="card-desc">{{ recipe.description}}</div>
+                        <div class="card-label"></div>
+                        <div class="card-like"></div>
+                    </div>
+                </div>
+                <div class="card-cate">In {{ recipe.category }}</div>
+                <div class="onhover">
+                    <div class="hover-content">
+                        <div class="mybtn">
+                            <button (click)="toDetail(recipe)">Quick View</button>
+                        </div>
+                        <div class="mybtn">
+                            <button>View More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="recipes?.length==0" class="col-md-3">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="https://lh3.googleusercontent.com/proxy/UBs1zO0rFr_czF_NnsFjiyWE8BYhEQT802FqLzXkZNz49vc16pyWzC7EFjfwbl7u118d6KS-R-8E-_TrgXuRLjhKf_g" alt="">
+                    </div>
+                    <div class="card-detail back-black">
+                        <div class="card-name">
+                            <h6>No Item Found As per Your Search Keyword</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

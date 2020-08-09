@@ -1,0 +1,99 @@
+
+.deatil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#biscuit {
+	height: 200px;
+	width: 600px;
+	background-color: #D59556;
+	border-radius: 20px;
+	position: relative;
+	box-shadow: 0 10px 0 0 #A87847;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-image:/*linear-gradient(45deg, rgba(0,0,0,.1), rgba(0,0,0,.4)),*/
+			
+			repeating-linear-gradient(135deg, #A87847, #A87847 2px, transparent 2px, transparent 20px),
+			repeating-linear-gradient(45deg, #A87847, #A87847 2px, transparent 2px, transparent 20px),
+			
+			/* covers */
+			linear-gradient(45deg, transparent, transparent 15px, #D59556 15px, #D59556 27px, transparent 27px, transparent 30px),
+			linear-gradient(-45deg, transparent, transparent 15px, #D59556 15px, #D59556 27px, transparent 27px, transparent 30px),
+			
+			/* bottom */
+			linear-gradient(45deg, transparent, transparent 13px, #A87847 13px, #A87847 15px, transparent 15px, transparent 30px),
+			linear-gradient(-45deg, transparent, transparent 13px, #A87847 13px, #A87847 15px, transparent 15px, transparent 30px),
+			
+			/* top */
+			linear-gradient(45deg, transparent, transparent 27px, #A87847 27px, #A87847 29px, transparent 29px, transparent 30px),
+			linear-gradient(-45deg, transparent, transparent 27px, #A87847 27px, #A87847 29px, transparent 29px, transparent 30px);
+		background-size: 29.5px 30px;
+		background-position: center;
+		border-radius: inherit;
+	}
+	#name {
+		position: absolute;
+		z-index: 10;
+		top: 25%;
+		bottom: 25%;
+		left: 0;
+		right: 0;
+		font-size: 70px;
+		font-family: 'Saira Extra Condensed', sans-serif;
+		color: #A87847;
+		text-shadow: 1px 2px 2px #715130;
+		background-color: #D59556;
+		background-image: linear-gradient(#A87847 2px, transparent 2px, transparent);
+		background-size: 100% 10.9%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		i {
+			font-style: normal;
+			display: inline-block;
+			position: relative;
+			padding: 0 4px;
+			
+			&:nth-child(1) {
+				bottom: -10px;
+			}
+			&:nth-child(2) {
+				bottom: 5px;
+			}
+			&:nth-child(3) {
+				bottom: 6px;
+			}
+			&:nth-child(4) {
+				bottom: 2px;
+			}
+			&:nth-child(5) {
+				bottom: -4px;
+			}
+			&:nth-child(6) {
+				bottom: -10px;
+			}
+			&:nth-child(7) {
+				bottom: -3px;
+			}
+			&:nth-child(8) {
+				bottom: 2px;
+			}
+			&:nth-child(9) {
+				bottom: -2px;
+            }
+            &:nth-child(10) {
+				bottom: 3px;
+			}
+		}
+	}
+}
